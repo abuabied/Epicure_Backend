@@ -25,8 +25,9 @@ export class RestaurantsController {
 
   public static async getRestaurantByName(req: Request, res: Response) {
     try {
+      const params = req.query;
       const service = new RestaurantsService();
-      const restaurants = await service.getRestaurantByName();
+      const restaurants = await service.getRestaurantByName(params);
       return res.status(200).send(restaurants);
     } catch (error) {
       return res.send(error);

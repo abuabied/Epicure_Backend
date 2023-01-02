@@ -8,6 +8,6 @@ router.get(
 );
 router.get("/getNewRestaurants", RestaurantsController.getNewRestaurants);
 router.get("/getOpenRestaurants", RestaurantsController.getOpenRestaurants);
-router.get("/getRestaurant:name", RestaurantsController.getRestaurantByName);
+router.get("/getRestaurantByName", RestaurantsController.getRestaurantByName);
 router.post("/createRestaurant", RestaurantsController.createRestaurant);
 export default router;

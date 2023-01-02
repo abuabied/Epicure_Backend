@@ -54,15 +54,15 @@ export class RestaurantsDal {
     return data;
   }
 
-  public async getRestaurantByName() {
-    const data = await Restaurants.find([
-      { $match: { name: "" } },
+  public async getRestaurantByName(restaurantName: String) {
+    const data = await Restaurants.aggregate([
+      { $match: { name: `${restaurantName}` } },
       {
         $lookup: {
-          localField: "signatureDish",
+          localField: "dishes",
           foreignField: "_id",
           from: "dishes",
-          as: "signatureDish",
+          as: "dishes",
         },
       },
     ]);
