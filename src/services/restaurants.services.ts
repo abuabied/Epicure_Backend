@@ -31,9 +31,9 @@ export class RestaurantsService {
     return res;
   }
 
-  public async getRestaurantByName() {
+  public async getRestaurantByName(restaurant: any) {
     const dal = new RestaurantsDal();
-    const res = dal.getRestaurantByName();
+    const res = dal.getRestaurantByName(restaurant?.name);
     return res;
   }
 }
