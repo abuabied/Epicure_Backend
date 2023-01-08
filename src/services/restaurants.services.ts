@@ -9,6 +9,22 @@ export class RestaurantsService {
 
   public async createRestaurant(restaurant: any) {
     const dal = new RestaurantsDal();
+    restaurant.chefName =
+      restaurant?.chefName !== undefined ? restaurant.chefName : "";
+    restaurant.established =
+      restaurant.established !== undefined ? restaurant.established : "1990";
+    restaurant.openH =
+      restaurant.openH !== undefined ? restaurant.openH : "08:00";
+    restaurant.closeH =
+      restaurant.closeH !== undefined ? restaurant.closeH : "22:00";
+    restaurant.img =
+      restaurant.img !== undefined ? restaurant.img : "noImg.png";
+    restaurant.rating = restaurant.rating !== undefined ? restaurant.rating : 0;
+    restaurant.popular =
+      restaurant.popular !== undefined ? restaurant.popular : false;
+    restaurant.new = restaurant.new !== undefined ? restaurant.new : false;
+    restaurant.open = restaurant.open !== undefined ? restaurant.open : false;
+
     const res = dal.createRestaurant(restaurant);
     return res;
   }
