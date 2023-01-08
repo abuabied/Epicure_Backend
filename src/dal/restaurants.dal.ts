@@ -26,17 +26,16 @@ export class RestaurantsDal {
 
     const response = await Restaurants.create(newRestaurant);
     if (response.chefName !== "") {
-      const result = await Chefs.findOne({ name: response.chefName }).updateOne(
-        {
-          $push: { restaurants: response._id },
-        }
-      );
+      await Chefs.findOne({ name: response.chefName }).updateOne({
+        $push: { restaurants: response._id },
+      });
     }
     return response;
   }
 
-  public findAll() {
-    return Restaurants.find();
+  public async findAll() {
+    const restaurants = await Restaurants.find();
+    return restaurants;
   }
 
   public async getPopularRestaurants() {
