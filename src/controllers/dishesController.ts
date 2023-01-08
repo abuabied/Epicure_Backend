@@ -8,7 +8,7 @@ export class DishesController {
       const dishes = await service.getDishes();
       return res.status(200).send(dishes);
     } catch (error) {
-      return res.send(error);
+      return res.send({ status: "error", msg: error });
     }
   }
 
@@ -19,7 +19,7 @@ export class DishesController {
       const dish = await service.createDish(params);
       return res.status(200).send(dish);
     } catch (error) {
-      return res.send(error);
+      return res.send({ status: "error", msg: error });
     }
   }
 
@@ -29,7 +29,7 @@ export class DishesController {
       const dishes = await service.getLunchDishes();
       return res.status(200).send(dishes);
     } catch (error) {
-      return res.send(error);
+      return res.send({ status: "error", msg: error });
     }
   }
 
@@ -39,7 +39,7 @@ export class DishesController {
       const dishes = await service.getBreakfastDishes();
       return res.status(200).send(dishes);
     } catch (error) {
-      return res.send(error);
+      return res.send({ status: "error", msg: error });
     }
     
   }
@@ -50,7 +50,7 @@ export class DishesController {
       const dishes = await service.getDinnerDish();
       return res.status(200).send(dishes);
     } catch (error) {
-      return res.send(error);
+      return res.send({ status: "error", msg: error });
     }  
   }
 }
