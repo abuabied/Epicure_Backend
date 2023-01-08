@@ -21,6 +21,12 @@ export class ChefsService {
 
   public async createChef(chef: any) {
     const dal = new ChefsDal();
+    chef.name = `${chef.fname} ${chef.lname}`;
+    chef.description = chef.description !== undefined ? chef.description : "";
+    chef.img = chef.img !== undefined ? chef.img : "noImg.png";
+    chef.popular = chef.popular !== undefined ? chef.popular : false;
+    chef.new = chef.new !== undefined ? chef.new : false;
+
     const res = dal.createChef(chef);
     return res;
   }
@@ -30,11 +36,9 @@ export class ChefsService {
     const res = await dal.getChefOfTheWeek();
     return res;
   }
- /*  public async updateChef(chef: any) {
+  /*  public async updateChef(chef: any) {
     const dal = new ChefsDal();
     const res = await dal.updateChef(chef);
     return res;
   } */
 }
-
-

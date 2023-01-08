@@ -5,23 +5,15 @@ export class RestaurantsDal {
   public async createRestaurant(restaurant: any) {
     const newRestaurant = new Restaurants({
       name: restaurant.name,
-      chefName: `${
-        restaurant.chefName !== undefined ? restaurant.chefName : ""
-      }`,
-      established: `${
-        restaurant.established !== undefined ? restaurant.established : "1990"
-      }`,
-      openH: `${restaurant.openH !== undefined ? restaurant.openH : "08:00"}`,
-      closeH: `${
-        restaurant.closeH !== undefined ? restaurant.closeH : "22:00"
-      }`,
-      img: `${restaurant.img !== undefined ? restaurant.img : "noImg.png"}`,
-      rating: `${restaurant.rating !== undefined ? restaurant.rating : 0}`,
-      popular: `${
-        restaurant.popular !== undefined ? restaurant.popular : false
-      }`,
-      new: `${restaurant.new !== undefined ? restaurant.new : false}`,
-      open: `${restaurant.open !== undefined ? restaurant.open : false}`,
+      chefName: restaurant.chefName,
+      established: restaurant.established,
+      openH: restaurant.openH,
+      closeH: restaurant.closeH,
+      img: restaurant.img,
+      rating: restaurant.rating,
+      popular: restaurant.popular,
+      new: restaurant.new,
+      open: restaurant.open,
     });
 
     const response = await Restaurants.create(newRestaurant);

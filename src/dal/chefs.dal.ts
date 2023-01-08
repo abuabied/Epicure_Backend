@@ -5,11 +5,11 @@ export class ChefsDal {
     const newChef = new Chefs({
       fname: chef.fname,
       lname: chef.lname,
-      name: `${chef.fname} ${chef.lname}`,
-      description: `${chef.description !== undefined ? chef.description : ""}`,
-      img: `${chef.img !== undefined ? chef.img : "noImg.png"}`,
-      popular: `${chef.popular !== undefined ? chef.popular : false}`,
-      new: `${chef.new !== undefined ? chef.new : false}`,
+      name: chef.name,
+      description: chef.description,
+      img: chef.img,
+      popular: chef.popular,
+      new: chef.new,
     });
 
     newChef.save(function (err: any, results: any) {
