@@ -8,7 +8,7 @@ export class RestaurantsController {
       const restaurants = await service.getRestaurants();
       return res.status(200).send(restaurants);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -19,7 +19,7 @@ export class RestaurantsController {
       const restaurant = await service.createRestaurant(params);
       return res.status(200).send(restaurant);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -30,7 +30,7 @@ export class RestaurantsController {
       const restaurants = await service.getRestaurantByName(params);
       return res.status(200).send(restaurants);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -40,7 +40,7 @@ export class RestaurantsController {
       const restaurants = await service.getPopularRestaurants();
       return res.status(200).send(restaurants);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -50,7 +50,7 @@ export class RestaurantsController {
       const restaurants = await service.getNewRestaurants();
       return res.status(200).send(restaurants);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -60,7 +60,7 @@ export class RestaurantsController {
       const restaurants = await service.getOpenRestaurants();
       return res.status(200).send(restaurants);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 }
