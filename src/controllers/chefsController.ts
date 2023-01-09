@@ -8,7 +8,7 @@ export class ChefsController {
       const chefs = await service.getAllChefs();
       return res.status(200).send(chefs);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -18,7 +18,7 @@ export class ChefsController {
       const chefs = await service.getNewChefs();
       return res.status(200).send(chefs);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -28,7 +28,7 @@ export class ChefsController {
       const chefs = await service.getPopularChefs();
       return res.status(200).send(chefs);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -39,7 +39,7 @@ export class ChefsController {
       const chef = await service.createChef(params);
       return res.status(200).send(chef);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 
@@ -49,7 +49,7 @@ export class ChefsController {
       const chef = await service.getChefOfTheWeek();
       return res.status(200).send(chef);
     } catch (error) {
-      return res.send({ status: "error", msg: error });
+      return res.status(400).send({ status: "error", msg: error });
     }
   }
 }
