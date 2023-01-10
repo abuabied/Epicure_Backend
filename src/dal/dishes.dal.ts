@@ -30,19 +30,19 @@ export class DishesDal {
   }
 
   public async getLunchDishes() {
-    const data = await Dishes.aggregate([{ $match: { categeory: "lunch" } }]);
+    const data = await Dishes.find({ $match: { categeory: "lunch" } });
     return data;
   }
 
   public async getBreakfastDishes() {
-    const data = await Dishes.aggregate([
+    const data = await Dishes.find(
       { $match: { categeory: "breakfast" } },
-    ]);
+    );
     return data;
   }
 
   public async getDinnerDishes() {
-    const data = await Dishes.aggregate([{ $match: { categeory: "dinner" } }]);
+    const data = await Dishes.find({ $match: { categeory: "dinner" } });
     return data;
   }
 }
