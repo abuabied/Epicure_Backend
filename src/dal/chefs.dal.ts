@@ -51,32 +51,16 @@ export class ChefsDal {
   }
 
   public async getPopularChefs() {
-    const data = await Chefs.aggregate([
+    const data = await Chefs.find(
       { $match: { popular: true } },
-      {
-        $lookup: {
-          localField: "restaurants",
-          foreignField: "_id",
-          from: "restaurants",
-          as: "restaurants",
-        },
-      },
-    ]);
+    );
     return data;
   }
 
   public async getNewChefs() {
-    const data = await Chefs.aggregate([
+    const data = await Chefs.find(
       { $match: { new: true } },
-      {
-        $lookup: {
-          localField: "restaurants",
-          foreignField: "_id",
-          from: "restaurants",
-          as: "restaurants",
-        },
-      },
-    ]);
+    );
     return data;
   }
 }
