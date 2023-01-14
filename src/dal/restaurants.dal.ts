@@ -61,12 +61,12 @@ export class RestaurantsDal {
   }
 
   public async getNewRestaurants() {
-    const data = await Restaurants.find({ $match: { new: true } });
+    const data = await Restaurants.find({ new: true });
     return data;
   }
 
   public async getOpenRestaurants() {
-    const data = await Restaurants.find({ $match: { open: true } });
+    const data = await Restaurants.find({ open: true });
     return data;
   }
 }
