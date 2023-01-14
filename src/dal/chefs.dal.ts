@@ -51,16 +51,12 @@ export class ChefsDal {
   }
 
   public async getPopularChefs() {
-    const data = await Chefs.find(
-      { $match: { popular: true } },
-    );
+    const data = await Chefs.find({ popular: true });
     return data;
   }
 
   public async getNewChefs() {
-    const data = await Chefs.find(
-      { $match: { new: true } },
-    );
+    const data = await Chefs.find({ new: true });
     return data;
   }
 }
