@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 import { MongoURI } from "../config/key";
 
 const connectDb = async () => {

@@ -1,7 +1,7 @@
-import express from "express";
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 import routes from "./routes/index";
-import bodyParser from "body-parser";
-import cors from "cors";
 import { connectDb } from "./db";
 
 const app = express();

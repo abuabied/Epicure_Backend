@@ -1,6 +1,6 @@
-import { Router } from "express";
+const express = require("express");
 import { ChefsController } from "../controllers/chefsController";
-const router = Router();
+const router = express.Router();
 router.get("/getAllChefs", ChefsController.getAllChefs);
 router.get("/getNewChefs", ChefsController.getNewChefs);
 router.get("/getPopularChefs", ChefsController.getPopularChefs);
