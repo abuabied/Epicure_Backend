@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const restaurantsSchema = new mongoose.Schema(
   {

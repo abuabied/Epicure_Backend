@@ -1,4 +1,4 @@
-import express from "express";
+const express = require("express");
 import authRoutes from "./auth.routes";
 import chefsRoutes from "./chefs.routes";
 import dishesRoutes from "./dishes.routes";

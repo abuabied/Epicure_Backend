@@ -1,6 +1,6 @@
-import { Router } from "express";
+const express = require("express");
 import { RestaurantsController } from "../controllers/restaurantsController";
-const router = Router();
+const router = express.Router();
 router.get("/getRestaurants", RestaurantsController.getRestaurants);
 router.get(
   "/getPopularRestaurants",
