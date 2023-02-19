@@ -7,11 +7,10 @@ export class AuthController {
       const service = new UsersService();
       const params = req.body; 
       const users = await service.register(params);
-      debugger;
       if (users.status === "success") return res.status(200).send(users);
       return res.status(400).send(users);
     } catch (error) {
-      return res.status(401).send({ status: "error", msg: error });
+      return res.send({ status: "error", msg: error });
     }
   }
 
@@ -23,7 +22,7 @@ export class AuthController {
       if (users.status === "success") return res.status(200).send(users);
       return res.status(400).send(users);
     } catch (error) {
-      return res.status(401).send({
+      return res.status(400).send({
         status: "error",
         msg: "Something went wrong! Try again.",
       });
