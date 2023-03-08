@@ -1,5 +1,5 @@
-import Dishes from "../db/models/dishes";
-import Restaurants from "../db/models/restaurants";
+const Dishes = require("../db/models/dishes");
+const Restaurants = require("../db/models/restaurants");
 
 export class DishesDal {
   public async createDish(dish: any) {

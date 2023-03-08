@@ -1,4 +1,4 @@
-import Chefs from "../db/models/chefs";
+const Chefs = require("../db/models/chefs");
 
 export class ChefsDal {
   public createChef(chef: any) {

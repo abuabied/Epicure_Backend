@@ -1,5 +1,5 @@
-import Chefs from "../db/models/chefs";
-import Restaurants from "../db/models/restaurants";
+const Chefs = require("../db/models/chefs");
+const Restaurants = require("../db/models/restaurants");
 
 export class RestaurantsDal {
   public async createRestaurant(restaurant: any) {

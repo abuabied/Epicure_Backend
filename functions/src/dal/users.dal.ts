@@ -1,4 +1,4 @@
-import Users from "../db/models/users";
+const Users = require("../db/models/users");
 
 export class UsersDal {
   public async register(user: any) {
