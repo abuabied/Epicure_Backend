@@ -10,6 +10,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(routes);
 connectDb().then(async () => {
-  app.listen(3001, () => console.log("Listening on http://localhost:3001"));
+  app.listen(3001, () => console.log("Listening..."));
 });
 exports.app = functions.https.onRequest(app);
