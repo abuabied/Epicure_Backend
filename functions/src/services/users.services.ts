@@ -1,5 +1,5 @@
 import { UsersDal } from "../dal/users.dal";
-import bcrypt from "bcrypt";
+const bcrypt = require("bcrypt");
 
 export class UsersService {
   public async register(user: any) {
@@ -8,7 +8,7 @@ export class UsersService {
     const UserExists = await dal.ifUserExists(user);
     if (UserExists) return { status: "failure", msg: "Email already exists!" };
 
-    bcrypt.hash(user.password, saltRounds, async (err, hash) => {
+    bcrypt.hash(user.password, saltRounds, async (err = null, hash:any) => {
       user.password = hash;
       await dal.register(user);
     });
