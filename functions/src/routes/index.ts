@@ -6,6 +6,8 @@ import restaurantsRoutes from "./restaurants.routes";
 
 const router = express.Router();
 
+router.get("/api/test", (req, res) => res.send("hello"));
+
 router.use("/api/chefs/", chefsRoutes);
 router.use("/api/restaurants/", restaurantsRoutes);
 router.use("/api/dishes/", dishesRoutes);
