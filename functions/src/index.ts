@@ -22,8 +22,4 @@ app.use(routes);
 
 connectDb();
 
-const api = functions.https.onRequest(app);
-
-module.exports = {
-  api,
-};
+exports.api = functions.https.onRequest(app);
