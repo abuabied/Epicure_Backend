@@ -19,8 +19,11 @@ app.use((req, res, next) => {
 });
 
 app.use(routes);
-// exports.app = functions.https.onRequest(app);
 
-exports.app = connectDb().then(async () => {
-  functions.https.onRequest(app);
-});
+connectDb();
+
+const api = functions.https.onRequest(app);
+
+module.exports = {
+  api,
+};
