@@ -14,13 +14,7 @@ export class ChefsDal {
       popular: chef.popular,
       new: chef.new,
     });
-
-    newChef.save(function(err: any, results: any) {
-      if (err) {
-        throw err;
-      }
-      return results;
-    });
+    newChef.save();
   }
 
   public getAllChefs() {
