@@ -14,5 +14,5 @@ app.use(cors());
 app.use(routes);
 
 exports.app = connectDb().then(async () => {
-  exports.app = functions.https.onRequest(app);
+  functions.https.onRequest(app);
 });
